@@ -1,66 +1,53 @@
-# AI FDE型導入事例30選
+# 確信度の高いAI FDE型導入事例10件
 
-[中文](README.md) | [English](README.en.md) | 日本語
+[English](cases.md) | [中文](cases.zh.md) | 日本語
 
 ## 選定基準
 
-FDEの仕事は、業務課題、実運用データとシステム、利用者の仕事の流れ、リスク管理、成果指標を一つの反復可能な提供プロセスにつなぐことです。本資料では、このような現場導入の証拠が公開されているものを「FDE型」と呼びます。正式なFDEチームが関わった例もあれば、顧客と提供者が共同で実装した例もあります。
+この版では事例を30件から10件へ意図的に絞りました。実在する組織、具体的なAI業務、本番または正式公開済みのシステム、実質的な導入作業、利用または成果を公開情報で確認できる事例だけを残しています。
 
-各事例は公開された一次情報にリンクしています。数値は情報公開元による公表値であり、独立監査の結果ではありません。
+領域課題の発見、自ら行うシステム統合、モデルと業務フローの設計、評価、ガバナンス、変更管理、本番からの学習を一つにつないでいるため、AI FDE型と呼びます。この表現は仕事内容を示すもので、参加企業が正式なFDE職種を使ったという意味ではありません。
 
-## 分類インデックス
+各事例には次の内容があります。
 
-### I. 高リスクの公共サービスと臨床運用
+- 根拠の要約と確信度。
+- 業務課題と導入方法。
+- 本番ワークフロー図。
+- 公開情報から確認できる統合、評価、セキュリティ、人による統制。
+- 情報公開元を明記した成果。
+- まだ証明されていない点。
+- [OpenAIとAmazonのFDE職務要件](role-requirements.ja.md)との対応。
+- 3件以上の公開資料。
 
-1. [米陸軍TITAN：エッジのセンサーから目標情報へ](cases/01-us-army-titan/README.ja.md)
-2. [NHS Federated Data Platform：患者フローを実行可能な業務にする](cases/02-nhs-federated-data-platform/README.ja.md)
-3. [Tampa General Hospital：ハリケーン下の患者と人員の調整](cases/03-tampa-general-hospital/README.ja.md)
-4. [Cleveland Clinic：病院能力のための仮想コマンドセンター](cases/04-cleveland-clinic-command-center/README.ja.md)
-5. [HCA Healthcare：勤務表の質を見える化する](cases/05-hca-healthcare-scheduling/README.ja.md)
-6. [カナダ、アルバータ州政府：レガシーシステムのAI支援セキュリティ修正](cases/06-alberta-government-cybersecurity/README.ja.md)
+## 事例インデックス
 
-### II. 産業、エネルギー、サプライチェーン
+### 規制対象の判断と企業展開
 
-7. [Panasonic Energy：工場現場の保全知識コパイロット](cases/07-panasonic-energy-maintenance/README.ja.md)
-8. [Komatsu：鉱山機械の稼働率を支えるサービス優先度](cases/08-komatsu-equipment-uptime/README.ja.md)
-9. [Heineken USA：販売網の欠品予防](cases/09-heineken-stockout-prevention/README.ja.md)
-10. [Wendy's QSCC：レストラン網の在庫バランス](cases/10-wendys-inventory-balancing/README.ja.md)
-11. [Eaton：供給網の優先順位と例外管理](cases/11-eaton-supply-chain/README.ja.md)
-12. [Doosan Infracore：製品、工場、現場フィードバックの接続](cases/12-doosan-field-feedback/README.ja.md)
-13. [Sarcos：ロボティクスとエッジAIの現場協調](cases/13-sarcos-edge-ai/README.ja.md)
-14. [Focus Brands：最初のアプリから再利用可能な運用基盤へ](cases/14-focus-brands-platform/README.ja.md)
+1. [Tampa General Hospital：FDEが深く関与した病院AI連携基盤](cases/01-tampa-general-hospital/README.ja.md)
+2. [アルバータ州政府：AIエージェントによるセキュリティ審査とレガシー刷新](cases/02-alberta-government-cybersecurity/README.ja.md)
+3. [Morgan Stanley：評価を先に設計した規制下の資産運用AI](cases/03-morgan-stanley-evaluations/README.ja.md)
+4. [BBVA：統制された試行から全行AI変革へ](cases/04-bbva-ai-transformation/README.ja.md)
+5. [Moderna：企業AIの展開と臨床判断を人に残す設計](cases/05-moderna-clinical-ai/README.ja.md)
 
-### III. 金融、ライフサイエンス、ナレッジワーク
+### 本番エージェント、検索、ワークフロー基盤
 
-15. [Morgan Stanley：資産管理における評価先行のAI](cases/15-morgan-stanley-evaluations/README.ja.md)
-16. [BBVA：統制された試行から全行のAI利用へ](cases/16-bbva-ai-adoption/README.ja.md)
-17. [Moderna：臨床判断を臨床チームに残す](cases/17-moderna-clinical-ai/README.ja.md)
-18. [Klarna：返金と返品につながる多言語サポート](cases/18-klarna-support-agent/README.ja.md)
-19. [GitLab：社内協働のための企業AI](cases/19-gitlab-enterprise-ai/README.ja.md)
-20. [Quantium：全員が毎日AIを使う](cases/20-quantium-ai-adoption/README.ja.md)
-21. [Headstart：企業ソフトウェアのAIネイティブな提供](cases/21-headstart-ai-native-delivery/README.ja.md)
-22. [Section：AI導入を能力開発の製品として扱う](cases/22-section-ai-capability/README.ja.md)
+6. [Klarna：大規模AIサポートと人によるサービスへの再調整](cases/06-klarna-support-agent/README.ja.md)
+7. [ChimeとDecagon：チャットと音声をまたぐ規制業界の顧客サポート](cases/07-chime-decagon-support-agent/README.ja.md)
+8. [CoreWeaveとCohere：現地ワークショップから90日で本番サポートエージェントへ](cases/08-coreweave-cohere-support-agent/README.ja.md)
+9. [DraftwiseとCohere：契約書作成を支える出典付きAI](cases/09-draftwise-legal-rag/README.ja.md)
+10. [OracleとCohere：Fusion Applicationsへ組み込んだ100件を超えるAI用途](cases/10-oracle-fusion-ai/README.ja.md)
 
-### IV. カスタマーサポート、企業検索、ワークフローエージェント
+## 事例をまたいで使える導入パターン
 
-23. [Decagon：データと業務規則につながるサポートエージェント](cases/23-decagon-policy-agent/README.ja.md)
-24. [Assembled：サポートエージェントと人のキューを調整する](cases/24-assembled-human-ai-support/README.ja.md)
-25. [Lyft：正確さとブランドらしさで選ぶサポートモデル](cases/25-lyft-support-model/README.ja.md)
-26. [Smartsheet：企業AIの三つの利用面](cases/26-smartsheet-ai-surfaces/README.ja.md)
-27. [CoreWeave：90日でSlackサポートに組み込んだエージェント](cases/27-coreweave-slack-agent/README.ja.md)
-28. [Draftwise：契約作成のための追跡可能な検索](cases/28-draftwise-legal-rag/README.ja.md)
-29. [Notion：ワークスペース検索の精密な再順位付け](cases/29-notion-rerank-search/README.ja.md)
-30. [Oracle Fusion：100以上の生成AI機能を業務スイートへ](cases/30-oracle-fusion-ai/README.ja.md)
+1. **運用上の意思決定から始める。** 誰がいつ判断し、どの情報を必要とし、どこに遅延や危険があり、何を改善するかを確認してからモデルを選びます。
+2. **既存の業務へ入れる。** 病院運用、セキュリティ審査、アドバイザーのツール、企業ワークスペース、サポートチャネル、法律文書作成、業務アプリの中で使えるようにします。
+3. **文脈と操作を接続する。** 本番価値にはID、権限、業務データ、検索、API、チケット、アカウント操作、監査記録が必要です。
+4. **人が責任を持つ境界を設計する。** 臨床判断、金融助言、セキュリティ修正、支払い紛争、基盤診断、法律承認では専門家の統制を明確に残します。
+5. **実業務を評価する。** 一般的なモデル順位だけでなく、検索品質、回答採用率、解決時間、再問い合わせ、利用率、業務成果を測ります。
+6. **展開そのものをエンジニアリングする。** 研修、社内推進者、相談会、共同ワークショップ、方針作成、サポート、四半期リリースも提供システムの一部です。
+7. **本番の根拠から自動化境界を変更する。** Klarnaが後から人による対応を強めた事実は、公開時の効率指標だけでは品質を守れないことを示します。
+8. **最初の導入を再利用可能な基盤へ変える。** 共通評価セット、検索部品、ガバナンス、運用手順、リリース機構が次の業務導入を速くします。
 
-## 事例をまたいで使える提供方法
+## 根拠について
 
-1. モデルではなく、実際の意思決定点から始めます。
-2. データアクセス、権限、書き戻しを初日から設計します。
-3. 業務専門家と評価セットを作ります。
-4. 拒否、エスカレーション、人の承認を製品機能にします。
-5. 解決時間、遅延日数、欠品、初回修理率、CSAT、手戻り、利用率などの業務成果を測ります。
-6. 最初のユースケースの後に、共有オブジェクト、ガバナンス、研修、リリース手順を残します。
-
-## 調査について
-
-本ページは2026年7月に整理しました。情報源は公開された一次資料であり、変更される場合があります。数値や構成を採用する前に、原資料と適用される地域の規制を確認してください。
+導入事実と数値は発表元を明記しています。参加企業の顧客事例は構築内容を確認する一次情報ですが、選択的な説明である可能性があります。利用できる場合は、規制提出資料、顧客資料、製品文書、独立報道も組み合わせました。調査は2026年7月に更新しました。数値、構成、職務要件を利用する前に原資料を再確認してください。

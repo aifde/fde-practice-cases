@@ -1,31 +1,38 @@
-# FDE 实践案例库
+# AI FDE Practice Case Library
 
-中文 | [English](README.en.md) | [日本語](README.ja.md)
+English | [中文](README.zh.md) | [日本語](README.ja.md)
 
-面向 AI Forward Deployed Engineer、应用 AI 工程师和业务交付团队的公开案例库。这里收录的不是“模型功能清单”，而是已经进入真实组织、真实数据与真实工作流的 AI 实施案例。
+A source-linked library of 10 high-confidence AI delivery cases for Forward Deployed Engineers, applied AI engineers, and technical delivery leaders. The default language is English, with complete Chinese and Japanese editions.
 
-## 这份资料如何使用
+These are not short company summaries. Every case reconstructs the operating problem, joint delivery approach, production workflow, system and human controls, reported outcomes, evidence limitations, and alignment with current OpenAI and Amazon FDE responsibilities.
 
-- [30 个分类案例与实施图](cases.md)：每例包含一张可渲染的流程图、业务问题、交付切入点、公开成果和可复用的 FDE 方法。也可阅读 [English](cases.en.md) 或 [日本語](cases.ja.md)。
-- [案例选择口径](cases.md#案例选择口径)：仅纳入有公开一手资料的实施；数字均标明为来源方披露，不能视为独立审计结果。
-- [方法索引](cases.md#跨案例可复用的方法)：用案例反推 FDE 的发现、建模、原型、评估、上线、推广和复用闭环。
+## Read the library
 
-## 案例地图
+- [10 high-confidence AI FDE-style cases](cases.md)
+- [中文案例库](cases.zh.md)
+- [日本語の事例集](cases.ja.md)
+- [OpenAI and Amazon FDE role framework](role-requirements.md)
 
-| 类别 | 数量 | 典型问题 |
-| --- | ---: | --- |
-| 高风险公共服务与临床运营 | 6 | 多系统信息无法转成一线可执行的决策 |
-| 工业、能源与供应链 | 8 | 现场信号、维修经验和运营数据没有形成闭环 |
-| 金融、生命科学与知识工作 | 8 | 受监管知识工作需要可信检索、评估与人工复核 |
-| 客服、企业搜索与工作流代理 | 8 | AI 必须嵌入现有工具、权限与交接机制，而非另起聊天窗口 |
+## What high confidence means here
 
-## 使用边界
+A case is included only when public evidence supports all or nearly all of the following:
 
-- “FDE 式”描述的是交付方法：与领域专家一起定义问题、接入真实系统、在工作流内试用、度量后迭代。它不表示案例公司采用了某一厂商的官方 FDE 职称或团队结构。
-- 案例来源包含 NHS England、Palantir、OpenAI、Anthropic 与 Cohere 等公开发布材料。它们可证明公开披露的实施与指标，但并不替代安全、合规、成本或因果效果的独立评估。
-- 每个案例使用 Mermaid 流程图呈现系统与人员关系，避免转载受版权限制的营销图片；在 GitHub 内可直接渲染为图。
-- 本项目是独立社区资料，不代表或获得任何 AI 实验室、雇主、客户机构或案例中的组织背书。
+1. A named customer or operating organization and a named AI delivery partner.
+2. A specific AI-enabled workflow, not a general partnership announcement.
+3. Production use, operational rollout, or a clearly released enterprise product.
+4. Evidence of integration, evaluation, governance, adoption, or measurable results.
+5. Multiple public sources where possible, including customer, provider, regulatory, product, or independent reporting.
+6. Enough detail to explain what an AI FDE would discover, build, test, govern, and improve.
 
-## 贡献
+High confidence does not mean every metric has been independently audited. Each case separates confirmed deployment facts, participant-reported results, and claims that remain unproven.
 
-欢迎补充有公开一手证据的案例。提交时请说明：业务所有者、真实工作流、接入的数据或系统、人工控制点、上线度量，以及可访问的原始来源。
+## Scope and independence
+
+- FDE-style describes a delivery method: embed with users, connect production systems, build and evaluate in the workflow, manage risk, measure outcomes, and iterate. It does not claim that every organization used an official FDE job title.
+- The cases cover healthcare, government cybersecurity, banking, life sciences, customer support, cloud infrastructure, legal technology, and enterprise applications.
+- Mermaid diagrams explain the system and human workflow without republishing copyrighted marketing graphics.
+- This is an independent community resource. It is not affiliated with or endorsed by OpenAI, Amazon, Anthropic, Cohere, Palantir, Decagon, or any customer organization cited here.
+
+## Contribute
+
+Please propose only source-backed production cases. A useful contribution identifies the business owner, delivery partner, real workflow, connected systems, human-control point, evaluation method, operating outcome, and evidence boundary.
