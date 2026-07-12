@@ -1,468 +1,56 @@
 # AI FDE型導入事例30選
 
+[中文](README.md) | [English](README.en.md) | 日本語
+
 ## 選定基準
 
 FDEの仕事は、業務課題、実運用データとシステム、利用者の仕事の流れ、リスク管理、成果指標を一つの反復可能な提供プロセスにつなぐことです。本資料では、このような現場導入の証拠が公開されているものを「FDE型」と呼びます。正式なFDEチームが関わった例もあれば、顧客と提供者が共同で実装した例もあります。
 
 各事例は公開された一次情報にリンクしています。数値は情報公開元による公表値であり、独立監査の結果ではありません。
 
-## I. 高リスクの公共サービスと臨床運用
-
-### 01. 米陸軍TITAN：エッジのセンサーから目標情報へ
-
-[出典：Palantir TITAN](https://www.palantir.com/titan/)
-
-~~~mermaid
-flowchart LR
-  A[宇宙と地上のセンサー] --> B[エッジでのデータ融合]
-  B --> C[AIとMLによる情報化]
-  C --> D[兵士の確認と行動]
-~~~
-
-**導入。** TITANはセンサー、ネットワーク、自動化をモジュール型の地上局にまとめ、異種の信号を時間制約のある判断に結びます。単独のモデルではなく、観測から利用者の判断までを扱う仕組みです。
-
-**FDEの示唆。** 運用者と保守担当者を交えて試作します。データ融合、エッジでの可用性、人による確認を一つの受入条件として扱います。
-
-### 02. NHS Federated Data Platform：患者フローを実行可能な業務にする
-
-[出典：NHS England、FDPの導入状況と効果](https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/impact/fdp-uptake-and-benefits/)
-
-~~~mermaid
-flowchart LR
-  A[臨床データと介護データ] --> B[ローカルFDP]
-  B --> C[待機リストと退院支援]
-  C --> D[臨床と運用のチーム]
-~~~
-
-**導入。** FDPは分散していた運用データを接続し、待機リスト確認や退院計画の具体的な製品として現場のケア調整に組み込みます。
-
-**FDEの示唆。** まず一つの患者経路から始め、ガバナンス、地域の実装責任者、現場研修、効果測定を併走させます。NHSは2026年5月時点で139の信託が稼働していると公表しています。
-
-### 03. Tampa General Hospital：ハリケーン下の患者と人員の調整
-
-[出典：Tampa General HospitalとPalantir](https://investors.palantir.com/news-details/2022/Tampa-General-Hospital-and-Palantir-Partner-to-Improve-Patient-Care-Through-Data-and-Analytics-Platform)
-
-~~~mermaid
-flowchart LR
-  A[患者、病床、人員データ] --> B[統合運用モデル]
-  B --> C[予測とシナリオ]
-  C --> D[人員配置の判断]
-~~~
-
-**導入。** Tampa Generalは日常の患者フロー用に運用データを結び、Hurricane Ianの際には患者と医療提供者のライブ表示と配置シナリオへ拡張しました。
-
-**FDEの示唆。** 高負荷の運用場面を受入試験にします。公開資料では、緊急時のワークフローを24時間未満で構成し、その後の日常運用にも再利用したと説明されています。
-
-### 04. Cleveland Clinic：病院能力のための仮想コマンドセンター
-
-[出典：Palantir Foundryの医療事例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[病床、手術室、退院の信号] --> B[仮想コマンドセンター]
-  B --> C[能力と人員の選択肢]
-  C --> D[運用責任者の判断]
-~~~
-
-**導入。** 病床割当、退院管理、手術室利用、人員配置を共通の運用画面にまとめる事例です。
-
-**FDEの示唆。** 洞察は、責任者が行動できる時にだけ価値になります。データ製品と一緒に、権限、決定権、定例運用を設計します。
-
-### 05. HCA Healthcare：勤務表の質を見える化する
-
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[技能、勤務、人員需要] --> B[勤務計画モデル]
-  B --> C[将来不足の通知]
-  C --> D[看護管理者の確認]
-~~~
-
-**導入。** スキルと需要の信号を用い、日々の勤務表のバランスと将来の配置を支援します。
-
-**FDEの示唆。** モデル出力を、管理者が理解し、異議を述べ、承認できる具体的な勤務変更へ翻訳します。責任を持つ臨床管理者をスコアで置き換えません。
-
-### 06. カナダ、アルバータ州政府：レガシーシステムのAI支援セキュリティ修正
-
-[出典：Anthropic、アルバータ州政府](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
-
-~~~mermaid
-flowchart LR
-  A[政府のコードベース] --> B[自動セキュリティ検査]
-  B --> C[技術者の検証と修正]
-  C --> D[管理されたリリースと再利用]
-~~~
-
-**導入。** AlbertaはClaude Codeを使って政府システムの検査と修正支援を行い、検証とリリース管理の責任はセキュリティチームと技術チームが担いました。
-
-**FDEの示唆。** エージェントは発見範囲と修正案を広げるために使い、本番変更を自律実行させません。公開事例では20時間で4.66億行を検査したとされています。
-
-## II. 産業、エネルギー、サプライチェーン
-
-### 07. Panasonic Energy：工場現場の保全知識コパイロット
-
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[センサーと修理チケット] --> B[工場データモデル]
-  B --> C[修理検索と支援]
-  C --> D[技術者の作業と記録]
-~~~
-
-**導入。** Panasonic Energyは設備信号、過去の保全チケット、非構造化文書を接続し、技術者が製造ラインで必要な修理知識を探せるようにしています。
-
-**FDEの示唆。** 技術者を製品の共同作成者にします。解決に使った手順を知識ループへ戻し、初期のナレッジベースを完成形と見なさないことが重要です。
-
-### 08. Komatsu：鉱山機械の稼働率を支えるサービス優先度
-
-[出典：Palantir Master Classes](https://www.palantir.com/master-classes/)
-
-~~~mermaid
-flowchart LR
-  A[遠隔計測と整備履歴] --> B[資産健全性モデル]
-  B --> C[サービス優先度]
-  C --> D[現場サービスチーム]
-~~~
-
-**導入。** KomatsuはFoundryとAIPを使い、機器情報とサービス情報を結び、運用の改善と稼働率向上を目指しています。
-
-**FDEの示唆。** 一般的な予知保全から始めません。まず、いつサービスチームが介入するかという一つの現場判断を選び、停止時間、初回修理率、利用率を測ります。
-
-### 09. Heineken USA：販売網の欠品予防
-
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[醸造所、倉庫、販売店データ] --> B[ライブ供給網表示]
-  B --> C[欠品リスクと配送変更]
-  C --> D[供給網の実行]
-~~~
-
-**導入。** 生産、倉庫、顧客、船舶のデータを接続し、混乱を早く把握して配送計画を調整します。
-
-**FDEの示唆。** 再現可能な例外キューで始めます。公開資料では、2日間の試験で約30万ドル相当の25件の販売店アラートを解決したとされます。
-
-### 10. Wendy's QSCC：レストラン網の在庫バランス
-
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[注文、在庫、配送センターデータ] --> B[レストラン供給モデル]
-  B --> C[不足と再配分の選択]
-  C --> D[運用承認]
-~~~
-
-**導入。** Wendy's QSCCは広いレストラン網の注文と在庫を追跡し、配送センターの必要量をモデル化して資源再配分を支援します。
-
-**FDEの示唆。** 決定権をシステムに組み込みます。不足予測には責任者、エスカレーション経路、運用上のトレードオフ説明が必要です。
-
-### 11. Eaton：供給網の優先順位と例外管理
-
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[調達、在庫、需要] --> B[供給網モデル]
-  B --> C[優先順位と例外キュー]
-  C --> D[計画と調達チーム]
-~~~
-
-**導入。** 公開資料では、Eatonが供給網のデジタル化で重要な運用項目に集中するためにプラットフォームを使う例として紹介されています。
-
-**FDEの示唆。** ダッシュボードを増やすのではなく例外キューを作ります。提案ごとに根拠、事業影響、責任者、期限を持たせます。
-
-### 12. Doosan Infracore：製品、工場、現場フィードバックの接続
-
-[出典：Palantir Foundryの製造事例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[製造、製品、現場データ] --> B[共有オブジェクトモデル]
-  B --> C[品質と市場の洞察]
-  C --> D[設計と運用の連携]
-~~~
-
-**導入。** 重機の製品開発、工場品質、現場信号をつなぐデジタル変革の事例です。
-
-**FDEの示唆。** 部門をまたぐ一つの部品や故障モードから始めます。共有オブジェクトと責任あるフォローアップは、広い経営ダッシュボードより価値を出すことがあります。
-
-### 13. Sarcos：ロボティクスとエッジAIの現場協調
-
-[出典：Palantir Foundryの製造事例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[ロボット運用とタスクデータ] --> B[エッジAI運用層]
-  B --> C[タスクと性能の洞察]
-  C --> D[運用者と技術者]
-~~~
-
-**導入。** SarcosはロボットシステムとエッジAIを組み合わせ、運用データを機器利用と保守に生かしています。
-
-**FDEの示唆。** 現場の接続性、障害時の縮退、人による引継ぎを第一級の要件にします。クラウド指標を一般化する前に、現場で少数の実タスクを検証します。
-
-### 14. Focus Brands：最初のアプリから再利用可能な運用基盤へ
-
-[出典：Palantir Master Classes](https://www.palantir.com/master-classes/)
-
-~~~mermaid
-flowchart LR
-  A[レストラン運用データ] --> B[再利用可能な業務オブジェクト]
-  B --> C[初期の意思決定アプリ]
-  C --> D[追加アプリ]
-~~~
-
-**導入。** Focus Brandsは最初のアプリを単発案件で終わらせず、より広い運用基盤の土台として使いました。
-
-**FDEの示唆。** 最初のユースケースで共有データ、アクセス規則、リリース経路に投資します。公開インタビューでは60日未満で成果を得て、さらに複数アプリへ広げたと説明されています。
-
-## III. 金融、ライフサイエンス、ナレッジワーク
-
-### 15. Morgan Stanley：資産管理における評価先行のAI
-
-[出典：OpenAI、Morgan Stanley](https://openai.com/index/morgan-stanley/)
-
-~~~mermaid
-flowchart LR
-  A[調査資料と社内知識] --> B[検索と評価セット]
-  B --> C[アドバイザー支援と議事録]
-  C --> D[アドバイザーの確認]
-~~~
-
-**導入。** Morgan Stanleyは、金融アドバイザー向けの検索と要約を広げる前に、専門家フィードバックを用いた評価方法を整備しました。
-
-**FDEの示唆。** 評価データを製品資産として扱います。公開資料では、実際のアドバイザー質問に対する試験を支えに、アドバイザーチームの利用率が98% 超とされています。
-
-### 16. BBVA：統制された試行から全行のAI利用へ
-
-[出典：OpenAI、BBVA](https://openai.com/index/bbva/)
-
-~~~mermaid
-flowchart LR
-  A[安全な企業AI環境] --> B[業務専門家のユースケース]
-  B --> C[リスク、法務、運用の仕事]
-  C --> D[ガバナンスと学習網]
-~~~
-
-**導入。** BBVAは安全なAI環境に、法務、セキュリティ、コンプライアンス、研修を初日から組み込み、業務専門家が明確なガードレールの中で用途を作れるようにしました。
-
-**FDEの示唆。** プラットフォーム、実践的な規則、推進者ネットワークを一緒に運用します。OpenAIは約10万人の利用、週あたり一人約3時間の削減、特定業務で最大80% の効率向上を公表しています。
-
-### 17. Moderna：臨床判断を臨床チームに残す
-
-[出典：OpenAI、Moderna](https://openai.com/index/moderna/)
-
-~~~mermaid
-flowchart LR
-  A[臨床と研究開発データ] --> B[統制されたGPTツール]
-  B --> C[用量分析と根拠の可視化]
-  C --> D[臨床チームの判断]
-~~~
-
-**導入。** Modernaは社内ツールで広い利用基盤を作り、臨床試験チームの分析支援を試行しました。モデルは理由、出典、可視化を提供し、判断は専門家が担います。
-
-**FDEの示唆。** 高リスク領域ではAIを意思決定支援に限定し、人の承認点を明示します。Modernaは企業導入後2か月で750のGPTを公表しています。
-
-### 18. Klarna：返金と返品につながる多言語サポート
-
-[出典：OpenAI、Klarna](https://openai.com/index/klarna/)
-
-~~~mermaid
-flowchart LR
-  A[顧客対話と注文状態] --> B[多言語AIアシスタント]
-  B --> C[返金、返品、引継ぎ]
-  C --> D[顧客の解決]
-~~~
-
-**導入。** KlarnaはAIアシスタントを、注文情報、返金、返品を伴うサポート業務につなぎ、静的なFAQに留めませんでした。
-
-**FDEの示唆。** 検証可能なバックエンド操作へ接続し、例外は人へ渡します。OpenAIは初月230万件の対話、再問い合わせ25% 減、完了時間が11分から2分未満へ短縮したと公表しています。
-
-### 19. GitLab：社内協働のための企業AI
-
-[出典：Anthropic、GitLab](https://www.anthropic.com/customers/gitlab-enterprise)
-
-~~~mermaid
-flowchart LR
-  A[開発、営業、コンテンツ業務] --> B[統制されたClaude環境]
-  B --> C[RFP、洞察、共同作業]
-  C --> D[チームの実践共有]
-~~~
-
-**導入。** GitLabは製品内だけでなく社内でもClaudeを使い、部門横断の用途を試して満足度と生産性で拡大を判断しました。
-
-**FDEの示唆。** 利用量だけでなく、提案作成期間、手戻り、知識共有などの業務成果を測ります。公開された試行では25% から50% の生産性向上が報告されています。
-
-### 20. Quantium：全員が毎日AIを使う
-
-[出典：Anthropic、Quantium](https://www.anthropic.com/customers/quantium)
-
-~~~mermaid
-flowchart LR
-  A[顧客課題と分析] --> B[安全なAIツールと指針]
-  B --> C[提案、コード、コーチング]
-  C --> D[コンサルティングの振り返り]
-~~~
-
-**導入。** Quantiumは明確な利用基準、実用的なガードレール、スキル開発、各事業部のユースケース責任を組み合わせました。
-
-**FDEの示唆。** 各部門に一つの中核業務を改善させます。事例では毎日AIを使う社員が89% で、複雑な提案が数週間から数時間になったとされています。
-
-### 21. Headstart：企業ソフトウェアのAIネイティブな提供
-
-[出典：Anthropic、Headstart](https://www.anthropic.com/customers/headstart)
-
-~~~mermaid
-flowchart LR
-  A[顧客要件と受入試験] --> B[AI支援の開発ループ]
-  B --> C[技術者レビューと統制]
-  C --> D[短い提供サイクル]
-~~~
-
-**導入。** HeadstartはAIをソフトウェア提供ループに組み込みつつ、コード、アーキテクチャ、品質の責任を技術者に残しています。
-
-**FDEの示唆。** 生成と検証を同時に速くします。公開事例では、案件が数か月から数週間になり、一部の作業で10倍から100倍の開発加速を報告しています。
-
-### 22. Section：AI導入を能力開発の製品として扱う
-
-[出典：Anthropic、Section](https://www.anthropic.com/customers/section)
-
-~~~mermaid
-flowchart LR
-  A[チームの実業務] --> B[研修とAIプロジェクト空間]
-  B --> C[部門用途とコーチング]
-  C --> D[能力と生産性の測定]
-~~~
-
-**導入。** Sectionはまず社内でAIを使う仕事の進め方を作り、研修、ワークフロー再設計、AIコーチを顧客向けサービスへ展開しました。
-
-**FDEの示唆。** プロンプト練習だけでなく実業務で教えます。事例では82% がClaudeを使い、半数が少なくとも10% の生産性向上を得たとされています。
-
-## IV. カスタマーサポート、企業検索、ワークフローエージェント
-
-### 23. Decagon：データと業務規則につながるサポートエージェント
-
-[出典：Anthropic、Decagon](https://www.anthropic.com/customers/decagon)
-
-~~~mermaid
-flowchart LR
-  A[チケットと顧客記録] --> B[規則を理解するエージェント]
-  B --> C[適格性確認とタスク実行]
-  C --> D[例外の人手引継ぎ]
-~~~
-
-**導入。** DecagonはAIエージェントを既存のチケットと顧客システムに接続し、方針に従って業務を完了できるようにしています。
-
-**FDEの示唆。** 許可された操作、必要な根拠、拒否条件、人への引継ぎをテスト可能な方針として定義します。事例では過剰推論が70% 減ったとされています。
-
-### 24. Assembled：サポートエージェントと人のキューを調整する
-
-[出典：Anthropic、Assembled](https://www.anthropic.com/customers/assembled)
-
-~~~mermaid
-flowchart LR
-  A[全チャネルの問い合わせ] --> B[AI支援と評価]
-  B --> C[自動解決または技能ルーティング]
-  C --> D[人の専門担当者]
-~~~
-
-**導入。** Assembledはエージェント応答を継続評価し、必要な技能に応じて自動化と人の間で案件を振り分けます。
-
-**FDEの示唆。** 自動応答率だけを最適化しません。公開事例では50% 超の自動化と90% 超の顧客満足を両立したとされています。
-
-### 25. Lyft：正確さとブランドらしさで選ぶサポートモデル
-
-[出典：Anthropic Claude Enterprise](https://www.anthropic.com/product/enterprise)
-
-~~~mermaid
-flowchart LR
-  A[乗客と運転者の問い合わせ] --> B[モデル比較]
-  B --> C[ブランドに沿う支援アシスタント]
-  C --> D[共感が必要な人手対応]
-~~~
-
-**導入。** Lyftは応答の正確さとブランドらしい語り方を比較し、より配慮が必要な業務は人が担う形でサポートに導入しました。
-
-**FDEの示唆。** 語調、共感、エスカレーション規則も評価セットに入れます。Anthropicは解決時間87% 超の短縮、判断精度30% 超の向上を公表しています。
-
-### 26. Smartsheet：企業AIの三つの利用面
-
-[出典：Anthropic Claude Enterprise](https://www.anthropic.com/product/enterprise)
-
-~~~mermaid
-flowchart LR
-  A[開発者、全社員、製品利用者] --> B[コード、企業、製品の三面]
-  B --> C[共通ガバナンスと利用信号]
-  C --> D[継続的な拡大]
-~~~
-
-**導入。** Smartsheetは、開発者向けClaude Code、全社員向けClaude Enterprise、製品内のClaudeを並行して導入し、利用者ごとに適切な画面と統制を提供しました。
-
-**FDEの示唆。** 全員を同じチャット画面に押し込みません。公開資料では、開発者のコード量3倍、マージPR 31% 増、全社員導入2.5週間後の利用率49% が示されています。
-
-### 27. CoreWeave：90日でSlackサポートに組み込んだエージェント
-
-[出典：Cohere、CoreWeave](https://cohere.com/customer-stories/coreweave)
-
-~~~mermaid
-flowchart LR
-  A[Slackのサポート依頼] --> B[文脈を集める振分エージェント]
-  B --> C[Jiraと専門家の協働]
-  C --> D[解決案を出すエージェント]
-~~~
-
-**導入。** CoreWeaveとCohereのソリューションアーキテクトは、まず支援プロセス全体を整理し、既存のSlack業務へ振分と解決のエージェントを差し込みました。
-
-**FDEの示唆。** 技術選定の前に、集中的なワークショップで手作業の引継ぎを減らします。事例では90日で本番化し、平均解決時間が4から8日から2から5日へ改善したとされています。
-
-### 28. Draftwise：契約作成のための追跡可能な検索
-
-[出典：Cohere、Draftwise](https://cohere.com/customer-stories/draftwise)
-
-~~~mermaid
-flowchart LR
-  A[過去の契約と条項] --> B[意味検索と再順位付け]
-  B --> C[出典付きの作成提案]
-  C --> D[弁護士の確認と交渉]
-~~~
-
-**導入。** Draftwiseは生成、埋め込み、再順位付けを組み合わせ、提案した条項の出典まで弁護士が確認できるRAGワークフローを作りました。
-
-**FDEの示唆。** 専門業務では根拠への道筋を標準の体験にします。企業は内部ベンチマークで検索品質が30% 改善したと公表しています。
-
-### 29. Notion：ワークスペース検索の精密な再順位付け
-
-[出典：Cohere、Notion](https://cohere.com/fr/customer-stories/notion)
-
-~~~mermaid
-flowchart LR
-  A[Notion、Slack、Driveの内容] --> B[候補検索]
-  B --> C[再順位付けと回答生成]
-  C --> D[多言語チーム]
-~~~
-
-**導入。** Notionはワークスペースと接続ツールをまたぐ検索パイプラインへ再順位付けを入れ、変動する需要にはクラウドの拡張性で対応しました。
-
-**FDEの示唆。** ワークスペース規模に応じて検索経路を分け、実際に失敗した検索で再現率と順位付けを改善します。事例は精度、コスト、多言語体験を同時の目標として扱います。
-
-### 30. Oracle Fusion：100以上の生成AI機能を業務スイートへ
-
-[出典：Cohere、Oracle](https://cohere.com/customer-stories/oracle)
-
-~~~mermaid
-flowchart LR
-  A[ERP、HCM、SCM、CXのデータ] --> B[RAGと企業モデル層]
-  B --> C[業務に埋め込む機能]
-  C --> D[四半期更新とガバナンス]
-~~~
-
-**導入。** OracleとCohereは、財務、供給網、人事、営業、マーケティング、サービスのFusion Cloud業務に、モデル、検索、再順位付けを埋め込みました。
-
-**FDEの示唆。** 共有の評価、検索、リリース層を作り、各業務モジュールが同じ安全と品質の統制を再利用できるようにします。公開事例は100以上の生成AIユースケースを説明しています。
+## 分類インデックス
+
+### I. 高リスクの公共サービスと臨床運用
+
+1. [米陸軍TITAN：エッジのセンサーから目標情報へ](cases/01-us-army-titan/README.ja.md)
+2. [NHS Federated Data Platform：患者フローを実行可能な業務にする](cases/02-nhs-federated-data-platform/README.ja.md)
+3. [Tampa General Hospital：ハリケーン下の患者と人員の調整](cases/03-tampa-general-hospital/README.ja.md)
+4. [Cleveland Clinic：病院能力のための仮想コマンドセンター](cases/04-cleveland-clinic-command-center/README.ja.md)
+5. [HCA Healthcare：勤務表の質を見える化する](cases/05-hca-healthcare-scheduling/README.ja.md)
+6. [カナダ、アルバータ州政府：レガシーシステムのAI支援セキュリティ修正](cases/06-alberta-government-cybersecurity/README.ja.md)
+
+### II. 産業、エネルギー、サプライチェーン
+
+7. [Panasonic Energy：工場現場の保全知識コパイロット](cases/07-panasonic-energy-maintenance/README.ja.md)
+8. [Komatsu：鉱山機械の稼働率を支えるサービス優先度](cases/08-komatsu-equipment-uptime/README.ja.md)
+9. [Heineken USA：販売網の欠品予防](cases/09-heineken-stockout-prevention/README.ja.md)
+10. [Wendy's QSCC：レストラン網の在庫バランス](cases/10-wendys-inventory-balancing/README.ja.md)
+11. [Eaton：供給網の優先順位と例外管理](cases/11-eaton-supply-chain/README.ja.md)
+12. [Doosan Infracore：製品、工場、現場フィードバックの接続](cases/12-doosan-field-feedback/README.ja.md)
+13. [Sarcos：ロボティクスとエッジAIの現場協調](cases/13-sarcos-edge-ai/README.ja.md)
+14. [Focus Brands：最初のアプリから再利用可能な運用基盤へ](cases/14-focus-brands-platform/README.ja.md)
+
+### III. 金融、ライフサイエンス、ナレッジワーク
+
+15. [Morgan Stanley：資産管理における評価先行のAI](cases/15-morgan-stanley-evaluations/README.ja.md)
+16. [BBVA：統制された試行から全行のAI利用へ](cases/16-bbva-ai-adoption/README.ja.md)
+17. [Moderna：臨床判断を臨床チームに残す](cases/17-moderna-clinical-ai/README.ja.md)
+18. [Klarna：返金と返品につながる多言語サポート](cases/18-klarna-support-agent/README.ja.md)
+19. [GitLab：社内協働のための企業AI](cases/19-gitlab-enterprise-ai/README.ja.md)
+20. [Quantium：全員が毎日AIを使う](cases/20-quantium-ai-adoption/README.ja.md)
+21. [Headstart：企業ソフトウェアのAIネイティブな提供](cases/21-headstart-ai-native-delivery/README.ja.md)
+22. [Section：AI導入を能力開発の製品として扱う](cases/22-section-ai-capability/README.ja.md)
+
+### IV. カスタマーサポート、企業検索、ワークフローエージェント
+
+23. [Decagon：データと業務規則につながるサポートエージェント](cases/23-decagon-policy-agent/README.ja.md)
+24. [Assembled：サポートエージェントと人のキューを調整する](cases/24-assembled-human-ai-support/README.ja.md)
+25. [Lyft：正確さとブランドらしさで選ぶサポートモデル](cases/25-lyft-support-model/README.ja.md)
+26. [Smartsheet：企業AIの三つの利用面](cases/26-smartsheet-ai-surfaces/README.ja.md)
+27. [CoreWeave：90日でSlackサポートに組み込んだエージェント](cases/27-coreweave-slack-agent/README.ja.md)
+28. [Draftwise：契約作成のための追跡可能な検索](cases/28-draftwise-legal-rag/README.ja.md)
+29. [Notion：ワークスペース検索の精密な再順位付け](cases/29-notion-rerank-search/README.ja.md)
+30. [Oracle Fusion：100以上の生成AI機能を業務スイートへ](cases/30-oracle-fusion-ai/README.ja.md)
 
 ## 事例をまたいで使える提供方法
 

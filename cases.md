@@ -1,468 +1,56 @@
 # 30 个 AI FDE 式落地案例
 
+中文 | [English](README.en.md) | [日本語](README.ja.md)
+
 ## 案例选择口径
 
-FDE 的价值不在于单独展示模型，而在于把领域问题、数据/系统、用户工作流、风险控制和可量化结果接成一个可迭代的交付回路。本页把“有现场交付特征”的公开案例归为 FDE 式案例：有的来自明确的现场/实施团队，有的是客户与供应商共同完成的嵌入式交付。
+FDE 的价值不在于单独展示模型，而在于把领域问题、数据/系统、用户工作流、风险控制和可量化结果接成一个可迭代的交付回路。本页把有现场交付特征的公开案例归为 FDE 式案例：有的来自明确的现场/实施团队，有的是客户与供应商共同完成的嵌入式交付。
 
 每个条目均链接到公开一手资料。来源中的成果与数字均为发布方披露；没有公开量化结果时，本文不补造数字。
 
-## 一、高风险公共服务与临床运营
-
-### 01. 美国陆军 TITAN：边缘传感器到目标情报
-
-[来源：Palantir TITAN](https://www.palantir.com/titan/)
-
-~~~mermaid
-flowchart LR
-  A[空间与地面传感器] --> B[数据融合与边缘处理]
-  B --> C[AI/ML 目标情报]
-  C --> D[士兵复核与任务决策]
-~~~
-
-**问题与交付。** 多域传感器数据很难在战术节奏内转成可行动信息。TITAN 以模块化地面站把传感器、网络与自动化接入同一流程，重点是缩短从传感器到行动方的链路，而不是单独部署一个模型。
-
-**公开成果与 FDE 启示。** 资料强调与士兵和维护人员的使用触点驱动原型设计。可复用方法是先把一线“决策时刻”画清楚，再把数据融合、边缘可用性和人工复核作为同一产品验收条件。
-
-### 02. NHS Federated Data Platform：把患者流转做成可执行工作流
-
-[来源：NHS England FDP 成效数据](https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/impact/fdp-uptake-and-benefits/)
-
-~~~mermaid
-flowchart LR
-  A[电子病历与社护数据] --> B[本地 FDP 实例]
-  B --> C[等候名单和出院产品]
-  C --> D[临床与运营团队协作]
-~~~
-
-**问题与交付。** 医院、社护和预约系统数据分散，使出院和等候名单管理依赖人工追问。FDP 将既有运营数据连接到本地实例，再以等待名单验证、OPTICA 出院规划等具体产品进入团队日常工作。
-
-**公开成果与 FDE 启示。** NHS 截至 2026 年 5 月披露 139 家信托已上线；OPTICA 的长住患者延迟天数在前后 12 个月对比中下降。可复用方法是以单一临床路径切入，同时配置数据治理、实施负责人、桌边培训和持续收益度量。
-
-### 03. Tampa General Hospital：飓风压力下的患者与人力调度
-
-[来源：Tampa General Hospital 与 Palantir](https://investors.palantir.com/news-details/2022/Tampa-General-Hospital-and-Palantir-Partner-to-Improve-Patient-Care-Through-Data-and-Analytics-Platform)
-
-~~~mermaid
-flowchart LR
-  A[患者、床位与人员数据] --> B[统一运营模型]
-  B --> C[预测与情景规划]
-  C --> D[护理人员调配]
-~~~
-
-**问题与交付。** 医院既要改善常态患者流，也要应对飓风造成的突发需求。团队先把多源数据和运营语义接入，再在 Hurricane Ian 期间快速扩展为患者与服务人员的实时全景和情景规划。
-
-**公开成果与 FDE 启示。** 发布方称相关应急工作流在不足 24 小时内可用，之后复用于日常运营。可复用方法是把危机场景当作高压验收，而不是只做仪表盘；提前设计能写回排班/通知动作的闭环。
-
-### 04. Cleveland Clinic：虚拟指挥中心优化医院资源
-
-[来源：Palantir Foundry 医疗交付案例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[床位、手术室和出院信号] --> B[虚拟指挥中心]
-  B --> C[资源与人员配置建议]
-  C --> D[运营负责人执行]
-~~~
-
-**问题与交付。** 床位分配、出院、手术室时段和人员配置相互牵连，单个科室的局部优化会制造全局堵点。虚拟指挥中心把这些资源放进同一运营视图，由负责人对建议进行取舍。
-
-**公开成果与 FDE 启示。** 公开材料将其用途列为缩短等待、改善住院时长、平衡人员配置和提高关键资源利用。FDE 应把“谁能改变什么”固化为权限和例会机制，不能只交付分析。
-
-### 05. HCA Healthcare：把排班质量变成可解释的运营信号
-
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[技能、班次与需求数据] --> B[排班优化模型]
-  B --> C[未来缺口预警]
-  C --> D[护理管理者确认]
-~~~
-
-**问题与交付。** 医疗排班不只追求人头数量，还要保证当天技能组合与未来需求相匹配。案例把排班数据变为可讨论的能力匹配信号，让管理者在班表落地前处理失衡。
-
-**公开成果与 FDE 启示。** 公开材料强调更均衡的日常排班与对未来的平衡能力。可复用方法是把模型输出解释为具体可操作的班次调整，并保留一线管理者的最终决定权。
-
-### 06. 加拿大阿尔伯塔省政府：AI 辅助遗留系统安全修复
-
-[来源：Anthropic 阿尔伯塔政府案例](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
-
-~~~mermaid
-flowchart LR
-  A[政府应用代码库] --> B[自动化检查代理]
-  B --> C[安全团队验证修复]
-  C --> D[上线与白皮书复用]
-~~~
-
-**问题与交付。** 政府遗留系统规模大、文档不全，安全审查很难覆盖。省技术团队用 Claude Code 做批量检查和修复，再由安全与工程人员验证，避免把模型输出直接当作生产变更。
-
-**公开成果与 FDE 启示。** 公开案例称团队在 20 小时内扫描 4.66 亿行代码。可复用方法是将代理定位为高覆盖率的发现与初修工具，以人工验收、变更控制和可公开复盘来守住风险边界。
-
-## 二、工业、能源与供应链
-
-### 07. Panasonic Energy：电池工厂的维护知识副驾
-
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[设备传感器和维修工单] --> B[工厂数据模型]
-  B --> C[维修建议与历史检索]
-  C --> D[技术员处理并写回]
-~~~
-
-**问题与交付。** 电池工厂的现场知识散落在传感器、维修票和非结构化文件中，新技术员难以快速掌握。智能工厂项目连接边缘信号和运营数据，把检索与建议带到生产线使用者。
-
-**公开成果与 FDE 启示。** Palantir 公开材料称 Ask Atom 解析大量历史维修票，并将处理步骤写回以持续完善知识；培训曲线由数月缩短至数周是发布方披露的方向性结果。关键做法是让现场人员成为知识闭环的共同作者。
-
-### 08. Komatsu：矿山设备服务与停机时间
-
-[来源：Palantir Master Classes](https://www.palantir.com/master-classes/)
-
-~~~mermaid
-flowchart LR
-  A[设备遥测与服务记录] --> B[资产健康语义层]
-  B --> C[故障与服务优先级]
-  C --> D[现场服务团队]
-~~~
-
-**问题与交付。** 重型设备的停机影响产能，服务人员需要把遥测、维护历史和客户现场状态放在一起判断。Komatsu 将 Foundry/AIP 用于提升服务效率和设备可用性。
-
-**公开成果与 FDE 启示。** 公开访谈强调快速改善运营卓越性。FDE 切入点不是泛化预测性维护，而是先选一个高价值的“服务何时介入”决策，绑定停机时长、首次修复率和技术员采纳率。
-
-### 09. Heineken USA：经销链路中的缺货预警
-
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[酒厂、仓库和经销商数据] --> B[实时供应链视图]
-  B --> C[缺货风险与调度建议]
-  C --> D[供应链团队执行]
-~~~
-
-**问题与交付。** 多层分销网络中，运输、库存和需求信号经常脱节。案例把酒厂、仓库、客户和运输状态接入同一视图，再以预警推动配送与库存调整。
-
-**公开成果与 FDE 启示。** 发布方披露，两天测试中解决 25 个经销商预警，并将缺货预防价值估为 490 万美元。可复用方法是从可回放的异常清单启动，先验证预警是否真的改变调度，再扩大自动化。
-
-### 10. Wendy’s QSCC：餐饮供应与资源重平衡
-
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[订单、库存和配送中心数据] --> B[餐饮供应模型]
-  B --> C[缺货与资源重分配]
-  C --> D[供应链运营人员]
-~~~
-
-**问题与交付。** 连锁餐厅供应波动会从配送中心传导到门店。案例把 6,500 家餐厅的订单与库存追踪放入实时模型，并把资源重分配作为可执行动作。
-
-**公开成果与 FDE 启示。** 发布方描述原来要数周的问题可在数分钟内处理。FDE 要把“谁批准重分配、何时升级、如何解释影响”与预测逻辑共同设计，避免只提供一个缺货分数。
-
-### 11. Eaton：供应链数字化优先级
-
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
-~~~mermaid
-flowchart LR
-  A[采购、库存与需求数据] --> B[供应链数字孪生]
-  B --> C[优先级和例外管理]
-  C --> D[计划与采购团队]
-~~~
-
-**问题与交付。** 供应链团队面对的不是数据缺失，而是优先级冲突和异常过载。Eaton 的公开案例将平台用于聚焦最需要行动的事项，支撑供应链数字化。
-
-**公开成果与 FDE 启示。** 未披露独立量化指标。可复用方法是建立例外管理队列：每条建议必须附数据来源、业务影响、负责人和处理期限，才能融入计划人员的日常节奏。
-
-### 12. Doosan Infracore：重型机械的产品与现场反馈
-
-[来源：Palantir Foundry 工程制造案例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[制造、产品和现场设备数据] --> B[统一对象模型]
-  B --> C[质量与市场反馈洞察]
-  C --> D[工程和运营协同]
-~~~
-
-**问题与交付。** 重型机械制造商需要把产品开发、工厂质量和客户现场信号连起来，才能及时发现问题。公开材料将 Doosan Infracore 列为利用平台推进数字化转型的制造案例。
-
-**公开成果与 FDE 启示。** 本案例不引用未披露的财务数字。FDE 可从“一个部件/故障模式跨部门追踪”起步，用共同对象和追责闭环替代各部门各自的报表。
-
-### 13. Sarcos：机器人与边缘 AI 的现场协同
-
-[来源：Palantir Foundry 工程制造案例](https://www.palantir.com/platforms/foundry/)
-
-~~~mermaid
-flowchart LR
-  A[机器人运行与任务数据] --> B[边缘 AI 操作系统]
-  B --> C[任务与性能洞察]
-  C --> D[现场操作员和工程师]
-~~~
-
-**问题与交付。** 机器人系统只有与任务现场、设备状态和维护节奏连接，才会成为生产能力。公开材料描述 Sarcos 把机器人能力与边缘 AI 操作系统结合。
-
-**公开成果与 FDE 启示。** 可复用方法是把现场网络、故障降级和人工接管当作核心产品需求；在真实场地先验证少量任务，而非从云端指标推断可用性。
-
-### 14. Focus Brands：从第一批应用到可复制运营平台
-
-[来源：Palantir Master Classes](https://www.palantir.com/master-classes/)
-
-~~~mermaid
-flowchart LR
-  A[餐饮运营数据] --> B[可复用业务对象]
-  B --> C[第一批决策应用]
-  C --> D[新应用持续扩展]
-~~~
-
-**问题与交付。** 多品牌餐饮运营的价值不止一个分析项目，而在于让第一批应用成为后续交付的底座。公开访谈描述其在短期部署后继续扩展多个应用。
-
-**公开成果与 FDE 启示。** 资料提到在不足 60 天达到预期结果并继续建设半打应用。FDE 团队应在首个用例中投资可复用的数据模型、权限和发布路径，避免每个新应用重新集成。
-
-## 三、金融、生命科学与知识工作
-
-### 15. Morgan Stanley：受监管财富管理中的评估先行
-
-[来源：OpenAI Morgan Stanley 案例](https://openai.com/index/morgan-stanley/)
-
-~~~mermaid
-flowchart LR
-  A[研究资料和内部知识] --> B[检索与评估集]
-  B --> C[顾问助手与会议纪要]
-  C --> D[顾问审阅后使用]
-~~~
-
-**问题与交付。** 财富顾问需要可靠地访问大量内部知识，同时满足高准确性要求。Morgan Stanley 先用专家评分的评估体系测试检索与总结，再将助手和会议纪要工具放入顾问流程。
-
-**公开成果与 FDE 启示。** OpenAI 披露超过 98% 的顾问团队使用该助手。可复用方法是把评估集视为产品资产：由领域专家定义真实问题、衡量准确与连贯性、持续修正检索和提示。
-
-### 16. BBVA：从受控试点到全行 AI 采用
-
-[来源：OpenAI BBVA 案例](https://openai.com/index/bbva/)
-
-~~~mermaid
-flowchart LR
-  A[安全企业 AI 环境] --> B[业务专家自建用例]
-  B --> C[法务风险运营工作流]
-  C --> D[治理和学习网络]
-~~~
-
-**问题与交付。** 银行不能靠影子 AI 扩散，也不能只让中心团队决定全部用例。BBVA 从较小部署起步，把安全、法务、合规与培训放在第一天，并让业务团队在受控环境内形成用例。
-
-**公开成果与 FDE 启示。** OpenAI 披露约 10 万名员工使用、每人每周约节省 3 小时，部分流程效率提升可达 80%。可复用方法是“平台+守则+冠军网络”，让治理成为放大器而非上线后的刹车。
-
-### 17. Moderna：把研发判断保留在人类临床团队手中
-
-[来源：OpenAI Moderna 案例](https://openai.com/index/moderna/)
-
-~~~mermaid
-flowchart LR
-  A[临床与研发数据] --> B[受控 GPT 工具]
-  B --> C[剂量分析和证据可视化]
-  C --> D[临床团队判断]
-~~~
-
-**问题与交付。** 生物医药团队希望用 AI 加速资料分析，但剂量选择不能外包给模型。Moderna 先通过内部工具和广泛测试建立采用基础，再试点将 AI 用作临床团队的分析与可视化助手。
-
-**公开成果与 FDE 启示。** 发布方称企业部署两个月内已有 750 个 GPT。可复用方法是将输出限定为支持理由、来源和图表，并要求专业人员作出最终临床判断。
-
-### 18. Klarna：把多语言客服代理接进退款与退货流程
-
-[来源：OpenAI Klarna 案例](https://openai.com/index/klarna/)
-
-~~~mermaid
-flowchart LR
-  A[客户对话和订单状态] --> B[多语言 AI 助手]
-  B --> C[退款退货与转人工]
-  C --> D[客户完成事项]
-~~~
-
-**问题与交付。** 客服代理必须理解订单、退款和退货状态，而不仅是回答 FAQ。Klarna 把 AI 助手纳入这些交易流程，并在多市场、多语言环境下运行。
-
-**公开成果与 FDE 启示。** OpenAI 披露首月完成 230 万次对话、重复咨询下降 25%、处理时长由 11 分钟降至不足 2 分钟。可复用方法是优先把代理接入可验证的后端动作，同时保持对例外情形的人工升级。
-
-### 19. GitLab：用企业 AI 改造内部协作而非只做产品功能
-
-[来源：Anthropic GitLab 案例](https://www.anthropic.com/customers/gitlab-enterprise)
-
-~~~mermaid
-flowchart LR
-  A[工程、销售与内容工作] --> B[受控 Claude 工作区]
-  B --> C[RFP、洞察与协作产物]
-  C --> D[团队分享最佳实践]
-~~~
-
-**问题与交付。** 软件公司既在产品中使用模型，也需要让内部团队安全获益。GitLab 在试点中将 AI 放进跨部门工作，并用满意度和生产率信号决定扩展。
-
-**公开成果与 FDE 启示。** 案例披露试点中 25% 至 50% 的生产率提升区间。可复用方法是不要只度量 token 或席位；把 RFP 周期、内容返工、知识共享等业务成果作为推广门槛。
-
-### 20. Quantium：咨询团队的“每人每天 AI”
-
-[来源：Anthropic Quantium 案例](https://www.anthropic.com/customers/quantium)
-
-~~~mermaid
-flowchart LR
-  A[客户问题和分析材料] --> B[安全 AI 工具和守则]
-  B --> C[提案、代码与领导辅导]
-  C --> D[顾问交付复盘]
-~~~
-
-**问题与交付。** 数据与 AI 咨询公司需要让各类专业人员采用 AI，而不是建立少数专家孤岛。Quantium 以清晰愿景、可用守则、训练和业务单元用例开发推进。
-
-**公开成果与 FDE 启示。** 发布方称 89% 团队成员每日使用 AI，复杂提案从数周缩短到数小时。可复用方法是要求每个业务单元承担一个核心工作流的改造责任，并把领导示范当作交付项。
-
-### 21. Headstart：AI 原生软件项目的交付节奏
-
-[来源：Anthropic Headstart 案例](https://www.anthropic.com/customers/headstart)
-
-~~~mermaid
-flowchart LR
-  A[客户需求与验收标准] --> B[AI 辅助工程循环]
-  B --> C[工程师评审与安全控制]
-  C --> D[更短周期的客户上线]
-~~~
-
-**问题与交付。** 传统项目以月为周期，AI 原生团队希望把安全的企业软件交付缩短到周。Headstart 将模型置于工程循环中，保留对代码、架构和交付质量的人类审查。
-
-**公开成果与 FDE 启示。** 案例披露项目周期可从数月降至数周，部分项目开发速度提升 10 至 100 倍。FDE 可借鉴其做法：把验收测试、权限和审查与生成速度同步自动化。
-
-### 22. Section：把 AI 采用做成能力建设产品
-
-[来源：Anthropic Section 案例](https://www.anthropic.com/customers/section)
-
-~~~mermaid
-flowchart LR
-  A[团队真实任务] --> B[训练与 AI 项目空间]
-  B --> C[部门用例和教练]
-  C --> D[生产率与能力度量]
-~~~
-
-**问题与交付。** 工具可用不等于员工会用。Section 在内部先建立 AI 工作方式，再把能力建设、流程重构和 AI 教练扩展给客户。
-
-**公开成果与 FDE 启示。** 发布方称 82% 团队成员使用 Claude，半数成员获得至少 10% 的生产率提升。可复用方法是把培训嵌入正在发生的工作，并让员工拿真实材料练习而非只学提示词。
-
-## 四、客服、企业搜索与工作流代理
-
-### 23. Decagon：把客服代理接到企业数据和业务规则
-
-[来源：Anthropic Decagon 案例](https://www.anthropic.com/customers/decagon)
-
-~~~mermaid
-flowchart LR
-  A[工单和客户数据库] --> B[政策感知代理]
-  B --> C[查询资格并执行任务]
-  C --> D[例外转人工]
-~~~
-
-**问题与交付。** 企业客服常被泛化聊天机器人拖累：能回答却不能完成退款、资格验证或复杂流程。Decagon 把代理连接到现有工单与客户系统，并让其遵循品牌和业务规则。
-
-**公开成果与 FDE 启示。** 案例称过度推断率下降 70%。可复用方法是把代理能做的动作、所需证据、拒绝条件和人工接管路径写成可测试的策略，而不是单靠系统提示。
-
-### 24. Assembled：客服代理与人工队列协同
-
-[来源：Anthropic Assembled 案例](https://www.anthropic.com/customers/assembled)
-
-~~~mermaid
-flowchart LR
-  A[全渠道咨询] --> B[AI 助手和评估系统]
-  B --> C[自动解决或技能路由]
-  C --> D[人工专员处理复杂案]
-~~~
-
-**问题与交付。** 客服自动化的目标不是最大化拦截，而是在保证满意度下把合适案件交给 AI 或最合适的人。Assembled 用评估系统持续衡量代理响应，结合排班和路由。
-
-**公开成果与 FDE 启示。** 公开案例称其自动化超过 50% 的案件，同时维持 90% 以上客户满意度。可复用方法是同时看自动化率、转人工率、解决时长和 CSAT，避免单一 KPI 伤害服务质量。
-
-### 25. Lyft：以品牌语气与准确性选择客服模型
-
-[来源：Anthropic Claude Enterprise](https://www.anthropic.com/product/enterprise)
-
-~~~mermaid
-flowchart LR
-  A[乘客和司机支持请求] --> B[模型对比评估]
-  B --> C[品牌化 AI 支持助手]
-  C --> D[人工处理同理心场景]
-~~~
-
-**问题与交付。** 面向客户的助手既要准确，也要符合品牌语气，尤其在需要同理心的情况。Lyft 先比较候选模型的准确性与语气，再在支持流程中安排人机分工。
-
-**公开成果与 FDE 启示。** Anthropic 披露解决时长下降超过 87%、决策准确性提升超过 30%。可复用方法是把品牌语气、同理心和升级规则纳入评测，不只以事实正确率做选型。
-
-### 26. Smartsheet：三种表面上的企业级 AI 部署
-
-[来源：Anthropic Claude Enterprise](https://www.anthropic.com/product/enterprise)
-
-~~~mermaid
-flowchart LR
-  A[工程、全员和产品用户] --> B[代码、企业和产品三表面]
-  B --> C[统一治理与采用数据]
-  C --> D[持续扩展]
-~~~
-
-**问题与交付。** 同一家公司里，工程师、普通员工和产品客户需要的 AI 表面不同。Smartsheet 同时部署 Claude Code、Claude Enterprise 和产品内能力，使治理与实践覆盖三种使用场景。
-
-**公开成果与 FDE 启示。** 发布方称工程师产出代码为同团队同侪的 3 倍、合并 PR 多 31%，全员发布 2.5 周内有 49% 活跃。可复用方法是分层定义体验和权限，而不是给所有人同一种聊天入口。
-
-### 27. CoreWeave：90 天内把代理嵌入 Slack 支持链路
-
-[来源：Cohere CoreWeave 案例](https://cohere.com/customer-stories/coreweave)
-
-~~~mermaid
-flowchart LR
-  A[Slack 支持请求] --> B[分流代理补全上下文]
-  B --> C[Jira 和专家协作频道]
-  C --> D[解决代理给出建议]
-~~~
-
-**问题与交付。** 云基础设施支持需要快速把客户问题送到正确工程师，原流程跨越多个工具且缺少上下文。CoreWeave 与解决方案架构师先梳理端到端流程，再把代理放进已有 Slack 工作方式。
-
-**公开成果与 FDE 启示。** 案例披露 90 天内投入生产、平均解决时间由 4 至 8 天降为 2 至 5 天。可复用方法是通过现场工作坊先消除手工断点，再选最少侵入的集成路径。
-
-### 28. Draftwise：合同起草中的可追溯检索
-
-[来源：Cohere Draftwise 案例](https://cohere.com/customer-stories/draftwise)
-
-~~~mermaid
-flowchart LR
-  A[历史合同和条款] --> B[语义检索与重排]
-  B --> C[带来源的起草建议]
-  C --> D[律师审核与谈判]
-~~~
-
-**问题与交付。** 律师需要从既有合同中找到准确的条款和先例，错误检索会直接降低对 AI 的信任。Draftwise 将生成、嵌入和重排模型组合为带引用的 RAG 工作流。
-
-**公开成果与 FDE 启示。** 发布方称内部基准的搜索结果质量提升 30%。可复用方法是把“可回到原文”的证据链作为默认 UX，并让专业人员验证检索质量而非只评价文笔。
-
-### 29. Notion：工作区搜索的精准重排
-
-[来源：Cohere Notion 案例](https://cohere.com/fr/customer-stories/notion)
-
-~~~mermaid
-flowchart LR
-  A[Notion、Slack 和 Drive 内容] --> B[候选检索]
-  B --> C[重排与生成回答]
-  C --> D[多语言团队使用]
-~~~
-
-**问题与交付。** 组织知识分布在工作区和连接器中，先召回再回答容易让不相关内容污染上下文。Notion 在搜索管线中加入重排，并以可扩缩云基础设施支撑不同规模的工作区。
-
-**公开成果与 FDE 启示。** 案例强调以精准度、成本和多语言体验为共同目标。可复用方法是按工作区规模设计不同检索路径，并用真实失败查询持续校正召回与重排。
-
-### 30. Oracle Fusion：把 100 多个生成式用例嵌入业务套件
-
-[来源：Cohere Oracle 案例](https://cohere.com/customer-stories/oracle)
-
-~~~mermaid
-flowchart LR
-  A[ERP、HCM、SCM 和 CX 数据] --> B[RAG 与企业模型层]
-  B --> C[嵌入式业务功能]
-  C --> D[季度更新和客户治理]
-~~~
-
-**问题与交付。** 企业应用中的 AI 若脱离财务、供应链、人力和客服的原有界面，就很难大规模采用。Oracle 与 Cohere 将模型、检索和重排放入 Fusion Cloud 的日常功能，并考虑客户的数据治理。
-
-**公开成果与 FDE 启示。** 公开案例称该协作支持 100 多个生成式 AI 用例。可复用方法是打造共享评估、检索和发布平台，让每个业务模块复用安全与质量护栏，而非各自重复建设。
+## 分类索引
+
+### 一、高风险公共服务与临床运营
+
+1. [美国陆军 TITAN：边缘传感器到目标情报](cases/01-us-army-titan/)
+2. [NHS Federated Data Platform：把患者流转做成可执行工作流](cases/02-nhs-federated-data-platform/)
+3. [Tampa General Hospital：飓风压力下的患者与人力调度](cases/03-tampa-general-hospital/)
+4. [Cleveland Clinic：虚拟指挥中心优化医院资源](cases/04-cleveland-clinic-command-center/)
+5. [HCA Healthcare：把排班质量变成可解释的运营信号](cases/05-hca-healthcare-scheduling/)
+6. [加拿大阿尔伯塔省政府：AI 辅助遗留系统安全修复](cases/06-alberta-government-cybersecurity/)
+
+### 二、工业、能源与供应链
+
+7. [Panasonic Energy：电池工厂的维护知识副驾](cases/07-panasonic-energy-maintenance/)
+8. [Komatsu：矿山设备服务与停机时间](cases/08-komatsu-equipment-uptime/)
+9. [Heineken USA：经销链路中的缺货预警](cases/09-heineken-stockout-prevention/)
+10. [Wendy’s QSCC：餐饮供应与资源重平衡](cases/10-wendys-inventory-balancing/)
+11. [Eaton：供应链数字化优先级](cases/11-eaton-supply-chain/)
+12. [Doosan Infracore：重型机械的产品与现场反馈](cases/12-doosan-field-feedback/)
+13. [Sarcos：机器人与边缘 AI 的现场协同](cases/13-sarcos-edge-ai/)
+14. [Focus Brands：从第一批应用到可复制运营平台](cases/14-focus-brands-platform/)
+
+### 三、金融、生命科学与知识工作
+
+15. [Morgan Stanley：受监管财富管理中的评估先行](cases/15-morgan-stanley-evaluations/)
+16. [BBVA：从受控试点到全行 AI 采用](cases/16-bbva-ai-adoption/)
+17. [Moderna：把研发判断保留在人类临床团队手中](cases/17-moderna-clinical-ai/)
+18. [Klarna：把多语言客服代理接进退款与退货流程](cases/18-klarna-support-agent/)
+19. [GitLab：用企业 AI 改造内部协作而非只做产品功能](cases/19-gitlab-enterprise-ai/)
+20. [Quantium：咨询团队的“每人每天 AI”](cases/20-quantium-ai-adoption/)
+21. [Headstart：AI 原生软件项目的交付节奏](cases/21-headstart-ai-native-delivery/)
+22. [Section：把 AI 采用做成能力建设产品](cases/22-section-ai-capability/)
+
+### 四、客服、企业搜索与工作流代理
+
+23. [Decagon：把客服代理接到企业数据和业务规则](cases/23-decagon-policy-agent/)
+24. [Assembled：客服代理与人工队列协同](cases/24-assembled-human-ai-support/)
+25. [Lyft：以品牌语气与准确性选择客服模型](cases/25-lyft-support-model/)
+26. [Smartsheet：三种表面上的企业级 AI 部署](cases/26-smartsheet-ai-surfaces/)
+27. [CoreWeave：90 天内把代理嵌入 Slack 支持链路](cases/27-coreweave-slack-agent/)
+28. [Draftwise：合同起草中的可追溯检索](cases/28-draftwise-legal-rag/)
+29. [Notion：工作区搜索的精准重排](cases/29-notion-rerank-search/)
+30. [Oracle Fusion：把 100 多个生成式用例嵌入业务套件](cases/30-oracle-fusion-ai/)
 
 ## 跨案例可复用的方法
 
