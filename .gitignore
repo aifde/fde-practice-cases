@@ -1,0 +1,16 @@
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+
+# Local databases and generated application artifacts
+data/local.db
+node_modules/
+.output/
+.nitro/
+src/paraglide/
+src/routeTree.gen.ts
+
+# Editor and package-manager noise
+.DS_Store
+npm-debug.log*
