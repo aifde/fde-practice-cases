@@ -1,7 +1,5 @@
 # 09. Heineken USA：经销链路中的缺货预警
 
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
 ~~~mermaid
 flowchart LR
   A[酒厂、仓库和经销商数据] --> B[实时供应链视图]
@@ -12,5 +10,9 @@ flowchart LR
 **问题与交付。** 多层分销网络中，运输、库存和需求信号经常脱节。案例把酒厂、仓库、客户和运输状态接入同一视图，再以预警推动配送与库存调整。
 
 **公开成果与 FDE 启示。** 发布方披露，两天测试中解决 25 个经销商预警，并将缺货预防价值估为 490 万美元。可复用方法是从可回放的异常清单启动，先验证预警是否真的改变调度，再扩大自动化。
+
+## 引用来源
+
+1. [来源：Palantir Impact](https://www.palantir.com/impact/)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)

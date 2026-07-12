@@ -1,7 +1,5 @@
 # 11. Eaton：供应链数字化优先级
 
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
 ~~~mermaid
 flowchart LR
   A[采购、库存与需求数据] --> B[供应链数字孪生]
@@ -12,5 +10,9 @@ flowchart LR
 **问题与交付。** 供应链团队面对的不是数据缺失，而是优先级冲突和异常过载。Eaton 的公开案例将平台用于聚焦最需要行动的事项，支撑供应链数字化。
 
 **公开成果与 FDE 启示。** 未披露独立量化指标。可复用方法是建立例外管理队列：每条建议必须附数据来源、业务影响、负责人和处理期限，才能融入计划人员的日常节奏。
+
+## 引用来源
+
+1. [来源：Palantir Impact](https://www.palantir.com/impact/)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)

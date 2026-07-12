@@ -1,7 +1,5 @@
 # 10. Wendy’s QSCC：餐饮供应与资源重平衡
 
-[来源：Palantir Impact](https://www.palantir.com/impact/)
-
 ~~~mermaid
 flowchart LR
   A[订单、库存和配送中心数据] --> B[餐饮供应模型]
@@ -12,5 +10,9 @@ flowchart LR
 **问题与交付。** 连锁餐厅供应波动会从配送中心传导到门店。案例把 6,500 家餐厅的订单与库存追踪放入实时模型，并把资源重分配作为可执行动作。
 
 **公开成果与 FDE 启示。** 发布方描述原来要数周的问题可在数分钟内处理。FDE 要把“谁批准重分配、何时升级、如何解释影响”与预测逻辑共同设计，避免只提供一个缺货分数。
+
+## 引用来源
+
+1. [来源：Palantir Impact](https://www.palantir.com/impact/)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)

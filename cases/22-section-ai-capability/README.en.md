@@ -1,7 +1,5 @@
 # 22. Section: treating AI adoption as a capability product
 
-[Source: Anthropic, Section](https://www.anthropic.com/customers/section)
-
 ~~~mermaid
 flowchart LR
   A[Real team tasks] --> B[Training and AI project space]
@@ -14,5 +12,9 @@ flowchart LR
 **FDE lesson.** Teach with real work, not only prompt exercises. The case reports 82% of the team using Claude and half of the team achieving at least a 10% productivity gain.
 
 ## IV. Customer support, enterprise search, and workflow agents
+
+## References
+
+1. [Source: Anthropic, Section](https://www.anthropic.com/customers/section)
 
 [中文](README.md) | English | [日本語](README.ja.md)

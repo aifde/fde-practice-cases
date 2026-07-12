@@ -1,7 +1,5 @@
 # 16. BBVA：統制された試行から全行のAI利用へ
 
-[出典：OpenAI、BBVA](https://openai.com/index/bbva/)
-
 ~~~mermaid
 flowchart LR
   A[安全な企業AI環境] --> B[業務専門家のユースケース]
@@ -12,5 +10,9 @@ flowchart LR
 **導入。** BBVAは安全なAI環境に、法務、セキュリティ、コンプライアンス、研修を初日から組み込み、業務専門家が明確なガードレールの中で用途を作れるようにしました。
 
 **FDEの示唆。** プラットフォーム、実践的な規則、推進者ネットワークを一緒に運用します。OpenAIは約10万人の利用、週あたり一人約3時間の削減、特定業務で最大80% の効率向上を公表しています。
+
+## 参考資料
+
+1. [出典：OpenAI、BBVA](https://openai.com/index/bbva/)
 
 [中文](README.md) | [English](README.en.md) | 日本語

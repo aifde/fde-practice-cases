@@ -1,7 +1,5 @@
 # 01. 米陸軍TITAN：エッジのセンサーから目標情報へ
 
-[出典：Palantir TITAN](https://www.palantir.com/titan/)
-
 ~~~mermaid
 flowchart LR
   A[宇宙と地上のセンサー] --> B[エッジでのデータ融合]
@@ -12,5 +10,9 @@ flowchart LR
 **導入。** TITANはセンサー、ネットワーク、自動化をモジュール型の地上局にまとめ、異種の信号を時間制約のある判断に結びます。単独のモデルではなく、観測から利用者の判断までを扱う仕組みです。
 
 **FDEの示唆。** 運用者と保守担当者を交えて試作します。データ融合、エッジでの可用性、人による確認を一つの受入条件として扱います。
+
+## 参考資料
+
+1. [出典：Palantir TITAN](https://www.palantir.com/titan/)
 
 [中文](README.md) | [English](README.en.md) | 日本語

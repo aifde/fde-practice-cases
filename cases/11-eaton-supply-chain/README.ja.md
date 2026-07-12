@@ -1,7 +1,5 @@
 # 11. Eaton：供給網の優先順位と例外管理
 
-[出典：Palantir Impact](https://www.palantir.com/impact/)
-
 ~~~mermaid
 flowchart LR
   A[調達、在庫、需要] --> B[供給網モデル]
@@ -12,5 +10,9 @@ flowchart LR
 **導入。** 公開資料では、Eatonが供給網のデジタル化で重要な運用項目に集中するためにプラットフォームを使う例として紹介されています。
 
 **FDEの示唆。** ダッシュボードを増やすのではなく例外キューを作ります。提案ごとに根拠、事業影響、責任者、期限を持たせます。
+
+## 参考資料
+
+1. [出典：Palantir Impact](https://www.palantir.com/impact/)
 
 [中文](README.md) | [English](README.en.md) | 日本語

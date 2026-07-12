@@ -1,7 +1,5 @@
 # 06. Government of Alberta: AI-assisted security remediation for legacy systems
 
-[Source: Anthropic, Government of Alberta](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
-
 ~~~mermaid
 flowchart LR
   A[Government code bases] --> B[Automated security checks]
@@ -14,5 +12,9 @@ flowchart LR
 **FDE lesson.** Use agents to increase discovery coverage and draft remediation, never as autonomous production change. The published case reports 466 million lines scanned in 20 hours.
 
 ## II. Industry, energy, and supply chain
+
+## References
+
+1. [Source: Anthropic, Government of Alberta](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
 
 [中文](README.md) | English | [日本語](README.ja.md)

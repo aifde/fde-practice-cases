@@ -1,7 +1,5 @@
 # 06. 加拿大阿尔伯塔省政府：AI 辅助遗留系统安全修复
 
-[来源：Anthropic 阿尔伯塔政府案例](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
-
 ~~~mermaid
 flowchart LR
   A[政府应用代码库] --> B[自动化检查代理]
@@ -14,5 +12,9 @@ flowchart LR
 **公开成果与 FDE 启示。** 公开案例称团队在 20 小时内扫描 4.66 亿行代码。可复用方法是将代理定位为高覆盖率的发现与初修工具，以人工验收、变更控制和可公开复盘来守住风险边界。
 
 ## 二、工业、能源与供应链
+
+## 引用来源
+
+1. [来源：Anthropic 阿尔伯塔政府案例](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)

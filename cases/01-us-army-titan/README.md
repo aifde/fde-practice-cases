@@ -1,7 +1,5 @@
 # 01. 美国陆军 TITAN：边缘传感器到目标情报
 
-[来源：Palantir TITAN](https://www.palantir.com/titan/)
-
 ~~~mermaid
 flowchart LR
   A[空间与地面传感器] --> B[数据融合与边缘处理]
@@ -12,5 +10,9 @@ flowchart LR
 **问题与交付。** 多域传感器数据很难在战术节奏内转成可行动信息。TITAN 以模块化地面站把传感器、网络与自动化接入同一流程，重点是缩短从传感器到行动方的链路，而不是单独部署一个模型。
 
 **公开成果与 FDE 启示。** 资料强调与士兵和维护人员的使用触点驱动原型设计。可复用方法是先把一线“决策时刻”画清楚，再把数据融合、边缘可用性和人工复核作为同一产品验收条件。
+
+## 引用来源
+
+1. [来源：Palantir TITAN](https://www.palantir.com/titan/)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)

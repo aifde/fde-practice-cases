@@ -1,7 +1,5 @@
 # 16. BBVA：从受控试点到全行 AI 采用
 
-[来源：OpenAI BBVA 案例](https://openai.com/index/bbva/)
-
 ~~~mermaid
 flowchart LR
   A[安全企业 AI 环境] --> B[业务专家自建用例]
@@ -12,5 +10,9 @@ flowchart LR
 **问题与交付。** 银行不能靠影子 AI 扩散，也不能只让中心团队决定全部用例。BBVA 从较小部署起步，把安全、法务、合规与培训放在第一天，并让业务团队在受控环境内形成用例。
 
 **公开成果与 FDE 启示。** OpenAI 披露约 10 万名员工使用、每人每周约节省 3 小时，部分流程效率提升可达 80%。可复用方法是“平台+守则+冠军网络”，让治理成为放大器而非上线后的刹车。
+
+## 引用来源
+
+1. [来源：OpenAI BBVA 案例](https://openai.com/index/bbva/)
 
 中文 | [English](README.en.md) | [日本語](README.ja.md)
